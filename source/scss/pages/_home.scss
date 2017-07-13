@@ -20,18 +20,19 @@ ul.specializations {
 
 .text-line {
   opacity: 0;
+  position: relative;
 }
 .text-line-1 {
-  animation: fade-in 1s ease forwards;
-  animation-delay: 1.2s;
+  animation: up-in-in 1s ease forwards;
+  animation-delay: 1.4s;
 }
 .text-line-2 {
-  animation: fade-in 1s ease forwards;
+  animation: up-in-in 1s ease forwards;
   animation-delay: 1.4s;
 }
 .text-line-3 {
-  animation: fade-in 1s ease forwards;
-  animation-delay: 1.6s;
+  animation: up-in-in 1s ease forwards;
+  animation-delay: 1.9s;
 }
 .intro-container {
   position: relative;

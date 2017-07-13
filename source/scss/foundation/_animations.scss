@@ -100,6 +100,16 @@
   }
 }
 
+@keyframes up-in-in {
+  0% {
+    top: 24px;
+    opacity: 0;
+  }
+  100% {
+    top: 0;
+    opacity: 1;
+  }
+}
 // .up-and-in {
 //   animation: up-and-in .4s ease forwards;
 //   animation-delay: 1.0s;
