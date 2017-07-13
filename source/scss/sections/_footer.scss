@@ -1,0 +1,36 @@
+/*
+  Footer styles
+*/
+
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: black;
+  padding: $base-spacing * 4 0 0;
+  height: 634px;
+  @include breakpoint(md){
+    padding: $base-spacing * 4 0;
+  }
+  .footer-nav-container {
+    height: 400px;
+  }
+  .footer-title {
+    position: relative;
+    top: 3px;
+    // color: white;
+    // mix-blend-mode: difference;
+    svg {
+      width: 70px;
+      height: 21px;
+      path.word {
+        // fill: white;
+        mix-blend-mode: difference;
+      }
+    }
+  }
+}
+.footer-content {
+  height: 494px;
+}

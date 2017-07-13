@@ -1,0 +1,234 @@
+@include font();
+
+:root {
+  -webkit-tap-highlight-color: transparent;
+  text-size-adjust: none;
+  box-sizing: border-box!important;
+  @include font-size(sm);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  @include regular-font();
+  color: white;
+  background: $monk-pink;
+}
+
+img, video {
+  width: 100%;
+  height: auto;
+}
+
+.pink-to-black {
+  animation: pink-to-black 1.4s ease forwards;
+  animation-delay: 1s;
+}
+.black-to-white {
+  animation: black-to-white 1.4s ease forwards;
+  animation-delay: 1s;
+}
+
+.main-content {
+  margin-bottom: 634px;
+  z-index: 2;
+  position: relative;
+  background: $monk-pink;
+  canvas {
+    position: fixed;
+    top: 0;
+    left:0;
+    z-index: -5;
+  }
+}
+.top-underscore {
+  position: relative;
+  margin-top: 20px;
+  &:before {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 2px;
+    background: white;
+    top: -20px;
+    left: 0;
+  }
+}
+
+.back-home {
+  a.hamburger {
+    .line {
+      animation: nav-zero-width .2s ease forwards;
+    }
+  }
+  .main-content .wrap {
+    animation: fade-out .4s ease forwards;
+  }
+}
+.section-bg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: white;
+}
+
+.lazy-load {
+  opacity: 0;
+}
+
+.first-wipe {
+  position: relative;
+  overflow: hidden;
+  &:before {
+    content: '';
+    position: absolute;
+    bottom:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: translateY(100%);
+    background: $monk-pink;
+    z-index: 999;
+    animation: wipe 1s ease forwards;
+    animation-delay: .7s;
+  }
+  img, video {
+    opacity: 0;
+    animation: fade-in .6s ease forwards;
+    animation-delay: 1s;
+  }
+}
+
+.wipe {
+  position: relative;
+  overflow: hidden;
+  &:before {
+    content: '';
+    position: absolute;
+    bottom:0;
+    left: 0;
+    width: 100%;
+    height: 200%;
+    transform: translateY(200%);
+    background: $monk-pink;
+    z-index: 999;
+  }
+  img, video {
+    opacity: 0;
+  }
+}
+
+.animate-in {
+  opacity: 1;
+  .client {
+    pointer-events: none;
+    h3.h1 {
+      animation: translate-up-100 .5s ease forwards;
+      animation-delay: 1s;
+    }
+  }
+  .wipe {
+    font-size: 0;
+    overflow: hidden;
+    &:before {
+      animation: wipe 2.2s ease forwards;
+      animation-delay: .4s;
+    }
+    img, video {
+      animation: fade-in 1.1s ease forwards;
+      animation-delay: 1s;
+    }
+  }
+  .text-content {
+    h5 {
+      opacity: 0;
+      animation: fade-up 1.8s ease forwards;
+      animation-delay: 1.5s;
+    }
+    h2 {
+      opacity: 0;
+      animation: fade-up 1.8s ease forwards;
+      animation-delay: 1.4s;
+      margin: 10px 0 7px;
+      @include breakpoint(md){
+        margin: 0px 0 30px;
+      }
+    }
+    p {
+      opacity: 0;
+      animation: fade-up 1.8s ease forwards;
+      animation-delay: 1.6s;
+    }
+    .mobile-cta {
+      opacity: 0;
+      animation: fade-up 1.8s ease forwards;
+      animation-delay: 1.7s;
+    }
+    button {
+      opacity: 0;
+      animation: fade-up 1.8s ease forwards;
+      animation-delay: 1.7s;
+    }
+  }
+  .text-only-content {
+    opacity: 0;
+    animation: fade-up 1.5s ease forwards;
+    animation-delay: .7s;
+    position: relative;
+  }
+}
+.work-page, .info-page, .contact-page {
+  .transition {
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 9999;
+    background: $monk-pink;
+    position: fixed;
+    animation: fade-out 2s ease forwards;
+    pointer-events: none;
+    animation-delay: .5s;
+  }
+  .transition.nextProject {
+    width: 0%;
+    animation: width-full .4s ease forwards;
+    opacity: 1;
+    background: $monk-pink;
+  }
+}
+.home-page {
+  .transition {
+    background: $monk-pink;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    z-index: 9999;
+  }
+}
+.home-transitioning {
+  .transition {
+    animation: width-full .3s ease forwards;
+  }
+}
+.sub-page-transition {
+  .transition {
+    width: 100%;
+    background: $monk-pink;
+    height: 0;
+    animation: height-full .4s ease forwards;
+  }
+}
+
+.margin-bottom-huge {
+  margin-bottom: 160px;
+}
